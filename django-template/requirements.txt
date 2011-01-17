@@ -1,0 +1,9 @@
+# django base
+django==1.2.4
+
+# database migration
+south==0.7.3
+
+# development helpers
+django-debug-toolbar==0.8.4
+django-sentry==1.6.0

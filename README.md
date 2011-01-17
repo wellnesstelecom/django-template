@@ -10,9 +10,9 @@ install
 - Clone repository
 - execute:
 
-    $ pip install -E myenv -r requirements.txt
-    $ python manage.py syncdb
-    $ python manage.py migrate
-    $ python manage.py runserver
-    $ firefox http://localhost:8000/test/
+    pip install -E myenv -r requirements.txt
+    python manage.py syncdb
+    python manage.py migrate
+    python manage.py runserver
+    firefox http://localhost:8000/test/
  

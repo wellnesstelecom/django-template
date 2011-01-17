@@ -8,8 +8,8 @@ install
 -------
 
 - Clone repository
-- execute
-    
+- execute:
+
     $ pip install -E myenv -r requirements.txt
     $ python manage.py syncdb
     $ python manage.py migrate

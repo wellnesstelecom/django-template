@@ -98,6 +98,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 INTERCEPT_REDIRECTS = False
 
 # sentry conf
+"""
 from sentry.client.handlers import SentryHandler
 logger = logging.getLogger()
 # ensure we havent already registered the handler
@@ -108,6 +109,7 @@ if SentryHandler not in map(lambda x: x.__class__, logger.handlers):
     logger = logging.getLogger('sentry.errors')
     logger.propagate = False
     logger.addHandler(logging.StreamHandler())
+"""
 
 ##########################################
 # this code must be at the end of this file

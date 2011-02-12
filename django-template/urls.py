@@ -11,6 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^sentry/', include('sentry.urls')),
+    (r'^sentry/', include('test_app.urls')),
 
 
     url(r'^test/$', direct_to_template,

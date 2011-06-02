@@ -2,7 +2,7 @@
 Wellness telecom django template
 ================================
 
-Project template for django projects based on django1.3b
+Project template for django projects based on django1.3
 
 install
 -------

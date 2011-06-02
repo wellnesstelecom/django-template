@@ -1,3 +1,5 @@
 *.pyc
 *.sqlite
 *.swp
+django-template/static/CACHE
+django-template/.sass-cache

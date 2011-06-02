@@ -1,18 +1,22 @@
+{% load static compress %}
+{% get_static_prefix as STATIC_PREFIX %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  <head profile="http://www.w3.org/2005/10/profile">
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
       <title>{% block title %}{% endblock %}</title>
 
-      <link rel="SHORTCUT ICON" href="{{MEDIA_URL}}img/favicon.ico" />
+      <link rel="icon" type="image/png" href="{{ STATIC_PREFIX }}img/hi.png" />
 
-      <link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" />
-      
+      {% compress css %}
       {% block css %} 
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.sass" type="text/sass" />
       {% endblock %}
+      {% endcompress %}
 
-      <script type="text/javascript" src="{{MEDIA_URL}}js/jquery-1.4.2.min.js"></script>
-
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+      {% compress js %}  
       <script type="text/javascript">
        //<![CDATA[
        {% block js %} 
@@ -24,6 +28,7 @@
        })
        //]]>
       </script>
+      {% endcompress %}
 
       {% block extra_head %}
       {% endblock %}

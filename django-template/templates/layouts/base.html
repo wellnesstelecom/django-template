@@ -7,16 +7,13 @@
       <title>{% block title %}{% endblock %}</title>
 
       <link rel="icon" type="image/png" href="{{ STATIC_PREFIX }}img/hi.png" />
+        
+        {% comprass %}
+          {% block css %} 
+            <link href="{{ STATIC_PREFIX }}css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+          {% endblock %}
+        {% endcomprass %}
 
-      {% compress css %}
-      {% block css %} 
-        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/reset.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.sass" type="text/sass" />
-      {% endblock %}
-      {% endcompress %}
-
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-      {% compress js %}  
       <script type="text/javascript">
        //<![CDATA[
        {% block js %} 
@@ -28,7 +25,6 @@
        })
        //]]>
       </script>
-      {% endcompress %}
 
       {% block extra_head %}
       {% endblock %}

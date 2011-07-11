@@ -2,4 +2,4 @@
 *.sqlite
 *.swp
 django-template/static/CACHE
-django-template/.sass-cache
+django-template/static/.sass-cache

@@ -9,4 +9,4 @@ django-debug-toolbar==0.8.4
 django-sentry==1.6.0
 
 # modern static
--e git://github.com/jezdez/django_compressor.git@develop#egg=django_compressor
+-e git://github.com/copitux/django_compressor.git@develop#egg=django_compressor

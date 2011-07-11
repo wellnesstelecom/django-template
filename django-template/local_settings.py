@@ -1,4 +1,4 @@
-COMPRESS = True
+COMPRESS = True # Developing with compress, rare
 #COMPRESS_PRECOMPILERS = (
 #    ('text/coffeescript', 'coffee --compile --stdio'),
 #    ('text/less', 'lessc {infile} {outfile}'),

@@ -1,37 +1,57 @@
 {% load static compress %}
 {% get_static_prefix as STATIC_PREFIX %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head profile="http://www.w3.org/2005/10/profile">
-      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-      <title>{% block title %}{% endblock %}</title>
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="icon" type="image/png" href="{{ STATIC_PREFIX }}img/hi.png" />
-        
-        {% comprass %}
-          {% block css %} 
-            <link href="{{ STATIC_PREFIX }}css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-          {% endblock %}
-        {% endcomprass %}
+  <title>{% block title %}{% endblock %}</title>
 
-      <script type="text/javascript">
-       //<![CDATA[
-       {% block js %} 
-       {% endblock %}
+  <link rel="shortcut icon" href="{{ STATIC_PREFIX }}/img/favicon.ico">
 
-       $(document).ready(function(){
-        {% block jquery_init %}
-        {% endblock %}
-       })
-       //]]>
-      </script>
+  {% comprass %}
+  {% block css %} 
+    <link href="{{ STATIC_PREFIX }}css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_PREFIX }}css/print.css" media="print" rel="stylesheet" type="text/css" />
+  {% endblock %}
+  {% endcomprass %}
+  <!-- Future implement. no-js unworking, but maintained for future changes
+  <script src="{{ STATIC_PREFIX }}js/libs/modernizr-1.7.min.js"></script> -->
 
-      {% block extra_head %}
-      {% endblock %}
+  {% block extra_head %}
+  {% endblock %}
   </head>
 
-  <body>
+  <body class="">
   {% block app %}
   {% endblock %}
+
+  {% block extra_js_cdn %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script>window.jQuery || document.write("<script src='{{ STATIC_PREFIX }}js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  {% endblock %}
+
+  {% compress js %}
+    <script type="text/javascript">
+     //<![CDATA[
+     {% block js %} 
+     {% endblock %}
+
+     $(document).ready(function(){
+      {% block jquery_init %}
+      {% endblock %}
+     })
+     //]]>
+    </script>
+    {% block extra_js_static %}
+    {% endblock %}
+  {% endcompress %}
   </body>
 </html>

@@ -1,6 +1,30 @@
 {% extends "layouts/base.html" %}
-
 {% block app %}
-<h1 class="test">Hola!</h1>
+  <div id="page">
+    <header>
+      <h1>See html code, resize and cry ;)</h1>
+      <p><strong>Device</strong>: <span id="desktop">Desktop</span> <span id="tablet">Tablet</span> <span id="mobile">Mobile</span></p>
+    </header>
+    <sidebar>
+      <h2>Sidebar</h2>
+      <ul>
+        <li>Nav1</li>
+        <li>Nav2</li>
+        <li>Nav3</li>
+        <li>Nav4</li>
+      </ul>
+    </sidebar>
+    <content>
+      <h2>Content</h2>
+      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+    </content>
+    <footer>
+      <ul>
+        <li><a href="http://www.twitter.com" title="twitter">Twitter</a></li>
+        <li><a href="http://www.facebook.com" title="facebook">Facebook</a></li>
+        <li><a href="http://plus.google.com" title="google+">Google +</a></li>
+      </ul>
+    </footer>
+  </div>
 {% endblock %}
 

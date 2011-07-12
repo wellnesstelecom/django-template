@@ -1,0 +1,15 @@
+// Lay out of page. Fixed but dinamic
+=content
+    +container
+    header, footer
+        +column($blueprint-grid-columns, true)
+        p
+            color: red
+        span
+            display: none
+        #desktop
+            display: inline
+    sidebar
+        +column(floor($blueprint-grid-columns / 3))
+    content
+        +column($blueprint-grid-columns - floor($blueprint-grid-columns / 3), true)

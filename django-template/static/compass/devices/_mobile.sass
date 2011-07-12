@@ -1,0 +1,21 @@
+@import "compass/typography/lists"
+
+@media only screen and (max-width: 767px)
+    $blueprint-container-size: 321px
+    $blueprint-grid-columns: 3
+    $blueprint-grid-margin: 10px
+    $blueprint-grid-width: 97px
+    #page
+        +content
+        header
+            p
+                color: blue
+            #mobile
+                display: inline
+            #desktop
+                display: none
+        sidebar
+            +column($blueprint-grid-columns)
+            ul
+                +no-bullets
+                +inline-block-list

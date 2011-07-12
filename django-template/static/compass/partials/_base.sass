@@ -1,0 +1,15 @@
+@import blueprint/reset
+@import blueprint
+
+body
+    +blueprint-typography(true)
+    +blueprint-grid
+    +blueprint-debug
+
+form
+    +blueprint-form
+
+.ie6, .ie7, .ie8
+    +blueprint-ie(true)
+
+@import mixins
